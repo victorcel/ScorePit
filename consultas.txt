@@ -1,0 +1,3 @@
+SELECT nombre
+FROM mesas
+WHERE	(not (mesas.nombre in(SELECT nombre from mesas join drops ON drops.mesa_id = mesas.id where HOUR(drops.created_at)=HOUR(NOW()))));
